@@ -3,19 +3,29 @@
 // import { SendEnHilsen } from './components/SendEnHilsen'
 // import { DynamicHeader } from './components/DynamicHeader'
 import { Main } from './components/Main'
-import { ListOverArray } from './components/ListOverArray'
+import { DynamicButton } from './components/DynamicButton'
 function App() {
-   const favoriteFoods = ["Ramen", "Sushi", "Pizza", "Hamburger", "Hotdog"]
-   const favoriteMovies = ["Inception", "Interstellar", "The Matrix", "Shrek", "The Dark Knight"]
- 
    return (
       <>
       <Main>
-        <h2>Mine livretter</h2>
-        <ListOverArray ArrayName={favoriteFoods} />
-
-        <h2>Mine favoritfilm</h2>
-        <ListOverArray ArrayName={favoriteMovies} />
+        <DynamicButton
+          action={() => alert("Hello There! From the first button!")}
+          size="small"
+          theme="dark"
+          text="Click me i'm the best button!"
+        />
+        <DynamicButton
+          action={() => alert("Hello There! From the second button!")}
+          size="medium"
+          theme="light"
+          text="Click me i'm second best button!"
+        />
+        <DynamicButton
+          action={() => alert("Hello There! From the third button!")}
+          size="large"
+          theme="dark"
+          text="Click me i'm third best button!"
+        />
       </Main>
       </>
    )
