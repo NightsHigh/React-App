@@ -16,12 +16,18 @@ export function CardFooter({ content }: { content: string }) {
     )
 }
 
-export function Card({ textContent, title, footerContent }: { textContent: string, title: string, footerContent: string }) {
+export function CardImage({ image }: { image: string }) {
     return (
-        <div className="max-w-md mx-auto my-8 p-8 bg-gray-100">
+        <img src={image || "https://picsum.photos/200/300"} alt="Card Image" className="w-full h-auto" />
+    )
+}
+export function Card({ textContent, title, footerContent, image }: { textContent: string, title: string, footerContent: string, image: string }) {
+    return (
+        <div className="max-w-md mx-auto my-8 p-8 bg-gray-100 border-2 border-gray-300 rounded-lg">
             <CardHeader text={textContent} />
             <CardBody content={title} />  
             <CardFooter content={footerContent} />  
+            <CardImage image={image} />
         </div>
     )
 }
