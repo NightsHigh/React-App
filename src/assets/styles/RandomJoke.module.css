@@ -1,0 +1,271 @@
+.jokeContainer {
+  max-width: 720px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  border-radius: 20px;
+  border: 1px solid rgba(148, 163, 184, 0.4);
+  box-shadow:
+    0 18px 40px rgba(15, 23, 42, 0.25),
+    0 0 0 1px rgba(15, 23, 42, 0.04);
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.title {
+  margin: 0;
+  font-size: clamp(1.6rem, 1.4rem + 1vw, 2.2rem);
+  letter-spacing: 0.01em;
+}
+
+.controls {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  margin: 1.2rem 0;
+}
+
+.label {
+  font-weight: 600;
+  opacity: 0.85;
+}
+
+.select {
+  padding: 0.7rem 0.85rem;
+  border-radius: 12px;
+  border: 1px solid transparent;
+  font-size: 1rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+  outline: none;
+}
+
+.select:focus {
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.25);
+}
+
+.jokeContent {
+  min-height: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 1.1rem 1.2rem;
+  border-radius: 12px;
+  border: 1px solid transparent;
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.jokeActions {
+  margin-top: 1.4rem;
+  display: flex;
+  justify-content: center;
+}
+
+.jokeActions .jokeButton {
+  min-width: 170px;
+}
+
+.setup {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.punchline {
+  margin: 0;
+  font-size: 1rem;
+  opacity: 0.9;
+}
+
+.loading {
+  margin: 0;
+  font-style: italic;
+  opacity: 0.8;
+}
+
+.error {
+  margin: 0.2rem 0 0;
+  color: #ef4444;
+  font-weight: 600;
+}
+
+.jokeButton,
+.themeToggle {
+  padding: 0.9rem 1.1rem;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  font-weight: 700;
+  transition: transform 0.15s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+.jokeButton:disabled {
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.jokeButton:hover:not(:disabled),
+.themeToggle:hover {
+  transform: translateY(-1px);
+}
+
+.jokeButton:active:not(:disabled),
+.themeToggle:active {
+  transform: translateY(0);
+}
+
+.light {
+  background: #f8fafc;
+  color: #0f172a;
+}
+
+.light .select {
+  background: #ffffff;
+  border-color: #cbd5e1;
+  color: #0f172a;
+}
+
+.light .select:hover {
+  border-color: #94a3b8;
+}
+
+.light .jokeContent {
+  background: #ffffff;
+  border-color: #e2e8f0;
+}
+
+.light .jokeButton {
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+  color: #ffffff;
+  box-shadow: 0 12px 25px rgba(37, 99, 235, 0.25);
+}
+
+.light .jokeButton:hover:not(:disabled) {
+  box-shadow: 0 14px 30px rgba(37, 99, 235, 0.35);
+}
+
+.light .themeToggle {
+  background: #e2e8f0;
+  color: #0f172a;
+}
+
+.dark {
+  background: #0f172a;
+  color: #e2e8f0;
+}
+
+.dark .select {
+  background: #1e293b;
+  border-color: #334155;
+  color: #e2e8f0;
+}
+
+.dark .select:hover {
+  border-color: #475569;
+}
+
+.dark .jokeContent {
+  background: #1f2937;
+  border-color: #334155;
+}
+
+.dark .jokeButton {
+  background: linear-gradient(135deg, #22d3ee, #0ea5e9);
+  color: #0f172a;
+  box-shadow: 0 12px 25px rgba(14, 165, 233, 0.3);
+}
+
+.dark .jokeButton:hover:not(:disabled) {
+  box-shadow: 0 14px 30px rgba(14, 165, 233, 0.45);
+}
+
+.dark .themeToggle {
+  background: #1e293b;
+  color: #e2e8f0;
+  border: 1px solid #334155;
+}
+
+.jokeButton + .themeToggle {
+  margin-left: 0.75rem;
+}
+
+@media (max-width: 640px) {
+  .jokeContainer {
+    margin: 0.75rem;
+    padding: 1rem 0.9rem;
+    border-radius: 18px;
+    box-shadow:
+      0 10px 24px rgba(15, 23, 42, 0.25),
+      0 0 0 1px rgba(15, 23, 42, 0.05);
+  }
+
+  .header {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.75rem;
+  }
+
+  .title {
+    font-size: 1.4rem;
+    text-align: left;
+  }
+
+  .jokeButton,
+  .themeToggle {
+    width: 100%;
+    text-align: center;
+    margin-top: 0.25rem;
+  }
+
+  .jokeContent {
+    padding: 0.85rem 0.9rem;
+  }
+
+  .setup {
+    font-size: 1rem;
+  }
+
+  .punchline {
+    font-size: 0.95rem;
+  }
+
+  .jokeActions {
+    margin-top: 1.2rem;
+  }
+}
+
+@media (max-width: 420px) {
+  .jokeContainer {
+    margin: 0.5rem;
+    padding: 0.85rem 0.8rem;
+  }
+
+  .title {
+    font-size: 1.25rem;
+  }
+
+  .controls {
+    margin: 0.9rem 0;
+  }
+
+  .select {
+    padding: 0.6rem 0.75rem;
+    font-size: 0.95rem;
+  }
+
+  .jokeButton,
+  .themeToggle {
+    padding: 0.75rem 0.9rem;
+  }
+}
+
